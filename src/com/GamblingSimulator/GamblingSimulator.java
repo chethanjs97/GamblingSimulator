@@ -5,38 +5,38 @@ import java.util.Random;
 public class GamblingSimulator {
 	public static final int STACK = 100;
 	public static final int BET = 1;
-	public static int Win = 0;
-	public static int Loose = 0;
-
+	public static int win = 0;
+	public static int loose = 0;
+	static Random Number = new Random();
+	static int randomNumber = Number.nextInt(2);
 	public static void checkWinOrLoose() {
-		Random Number = new Random();
-		int randomNumber = Number.nextInt(2);
+		
+		
 		if (randomNumber == 0) {
-			Win = BET;
-			System.out.println("Gambler Is Winner " + Win);
+			win = BET;
+			System.out.println("Gambler Is Winner " + win);
 		} else {
-			Loose = BET;
-			System.out.println("Gamler is not winner " + Loose);
+			loose = BET;
+			System.out.println("Gamler is not winner " + loose);
 		}
 	}
 	public static void WinOrLoose50Percent() {
-		Random Number = new Random();
+		
+		int newStack = STACK;
+		while (newStack > 50 && newStack < 150) {
+			
 
-		int tempStack = STACK;
-		while (tempStack > 50 && tempStack < 150) {
-			int randomNo = Number.nextInt(2);
-
-			if (randomNo == 0) {
-				tempStack = tempStack + BET;
-				Win = BET;
-				System.out.println("Gambler Is Winner" + Win);
+			if (randomNumber == 0) {
+				newStack = newStack + BET;
+				win = BET;
+				System.out.println("Gambler Is Winner" + win);
 			} else {
-				tempStack = tempStack - BET;
-				Loose = BET;
-				System.out.println("Gamler is not winner" + Loose);
+				newStack = newStack - BET;
+				loose = BET;
+				System.out.println("Gamler is not winner" + loose);
 			}
 		}
-		System.out.println("Total Stack is : " + tempStack);
+		System.out.println("Total Stack is : " + newStack);
 	}
 
 	public static void main(String[] args) {
