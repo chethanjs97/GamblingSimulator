@@ -8,7 +8,7 @@ public class GamblingSimulator {
 	public static int Win = 0;
 	public static int Loose = 0;
 
-	public void checkWinOrLoose() {
+	public static void checkWinOrLoose() {
 		Random Number = new Random();
 		int randomNumber = Number.nextInt(2);
 		if (randomNumber == 0) {
@@ -23,8 +23,8 @@ public class GamblingSimulator {
 	public static void main(String[] args) {
 
 		System.out.println("Welcome To Gambling Simulator");
-		GamblingSimulator gamblingSimulator = new GamblingSimulator();
-		gamblingSimulator.checkWinOrLoose();
+		
+		checkWinOrLoose();
 
 	}
 
