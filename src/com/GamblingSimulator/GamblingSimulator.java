@@ -19,12 +19,32 @@ public class GamblingSimulator {
 			System.out.println("Gamler is not winner " + Loose);
 		}
 	}
+	public static void WinOrLoose50Percent() {
+		Random Number = new Random();
+
+		int tempStack = STACK;
+		while (tempStack > 50 && tempStack < 150) {
+			int randomNo = Number.nextInt(2);
+
+			if (randomNo == 0) {
+				tempStack = tempStack + BET;
+				Win = BET;
+				System.out.println("Gambler Is Winner" + Win);
+			} else {
+				tempStack = tempStack - BET;
+				Loose = BET;
+				System.out.println("Gamler is not winner" + Loose);
+			}
+		}
+		System.out.println("Total Stack is : " + tempStack);
+	}
 
 	public static void main(String[] args) {
 
 		System.out.println("Welcome To Gambling Simulator");
 		
 		checkWinOrLoose();
+		WinOrLoose50Percent();
 
 	}
 
